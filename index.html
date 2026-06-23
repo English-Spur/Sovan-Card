@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>English Spur - Sovanlal Kapri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Full Screen Mobile Configuration - 100% Fit */
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            background: #0c111d;
+        }
+
+        /* Pure Mobile Background with Book Desk Image Fitted Perfectly */
+        .mobile-viewport {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1544894079-e81a9eb1da8b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center the card vertically on screen */
+            padding: 60px 24px; 
+        }
+
+        /* 100% Full Responsive Real Glassmorphism White Transparent Box Container */
+        .card-inner-content {
+            background: rgbargba(44, 53, 64, 00); /* Restored matching translucent mesh */
+            backdrop-filter: blur(3.5px); /* Pure glass blur effect for mobile layout */
+            -webkit-backdrop-filter: blur(3.5px);
+            width: 100%;
+            max-width: 400px; /* Safe bounds for bigger screens */
+            border-radius: 24px;
+            padding: 75px 20px 30px 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 3.5px solid rgba(208, 247, 99, 0.8); /* Elegant glossy reflective rim */
+        }
+
+        /* Strict Square Profile Image - Embedded halfway over the container edge */
+        .profile-image-square {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            position: absolute;
+            top: -55px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 3px solid rgba(238, 253, 97, 0.48);
+            box-shadow: 0 2px 7px rgba(238, 253, 97, 0.48);
+            border-radius: 20px !important;
+        }
+
+        /* High-contrast Typography for Flawless Legibility over Glass */
+        .profile-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+            margin-bottom: 3px;
+        }
+
+        .profile-brand {
+            font-size: 15px;
+            color: #d4fca2; /* Vibrant professional amber tag */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .profile-title {
+            font-size: 13px;
+            color: #bdfcf7;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 14px;
+            color: #E7F5F6;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-weight: 500;
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* Fully Fluid Button Group Layout */
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+        }
+
+        /* Helper common class for custom centered buttons */
+        .btn-custom {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 12px !important;
+            border-radius: 14px !important;
+            text-decoration: none !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            font-size: 14.5px !important;
+            width: 100% !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+            transition: background 0.2s ease, transform 0.1s ease !important;
+        }
+
+        /* 1. Premium Semi-Transparent Maroon Call Action Style */
+        .btn-maroon-call {
+            background: rgba(120, 28, 46, 0.9) !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            padding: 15px 22px !important;
+        }
+
+        /* 2. Dark Frosted Glass Email Action Style */
+        .btn-email {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(115, 0, 116, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 15px 22px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14.5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: background 0.2s ease;
+        }
+
+        .btn-email i {
+            font-size: 16px;
+            color: #ff4757;
+        }
+
+        /* 3. Premium WhatsApp Horizontal Button Style */
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(21, 167, 9, 0.95); /* Vibrant WhatsApp Green Glass */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 15px 22px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14.5px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background 0.2s ease;
+        }
+
+        .btn-whatsapp i {
+            font-size: 18px;
+        }
+
+        /* 4. Website Dark Charcoal Button Style */
+        .btn-website-blue {
+            background: rgba(162, 177, 0, 0.8) !important; /* Matte Dark Charcoal Grey */
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            color: #ffffff !important;
+            border-radius: 14px !important;
+            text-decoration: none !important;
+            padding: 15px 22px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 12px !important;
+        }
+
+        /* Active/Touch Feedback for Mobile Browsers */
+        .btn-maroon-call:active { background: rgb(95, 20, 35) !important; transform: scale(0.98); }
+        .btn-email:active { background: rgba(15, 23, 42, 0.85); }
+        .btn-whatsapp:active { background: rgba(37, 211, 102, 1); }
+        .btn-website-blue:active { background: rgb(104, 5, 2) !important; transform: scale(0.98) !important; }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-viewport">
+        
+        <div class="card-inner-content">
+            <img src="sovan_sir.jpg" alt="শোভন কাপড়ী" class="profile-image-square">
+            
+            <h1 class="profile-name">SOVANLAL KAPRI</h1>
+            <p class="profile-brand">English Spur Online English Training Academy</p>
+            <p class="profile-title">Founder & Lead Trainer</p>
+            
+            <p class="intro-text">
+                ভয় কাটিয়ে সাবলীলভাবে ইংরেজি বলতে ও আপনার ক্যারিয়ারকে সাফল্যের চূড়ায় নিয়ে যেতে আজই আমার 'English Spur Online English Training Academy' -র  সাথে যুক্ত হোন। সঠিক গাইডেন্সই সাফল্যের চাবিকাঠি । <br>তাই সময় নষ্ট না করে আজি যুক্ত হন.... 
+            </p>          
+            
+            <div class="contact-list">
+                <a href="tel:+919875340842" class="btn-custom btn-maroon-call">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>আমার সাথে সরাসরি ফোনে কথা বলুন</span>
+                </a>
+
+                <a href="mailto:englishspur2020@gmail.com" class="btn-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>আমাকে ইমেল করুন</span>
+                </a>
+
+                <a href="https://wa.me/919875340842" target="_blank" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>হোয়াটসঅ্যাপে মেসেজ করুন</span>
+                </a>
+
+                <a href="https://english-spur.github.io/Official-Website/" target="_blank" class="btn-custom btn-website-blue">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>আমাদের ওয়েবসাইট ভিজিট করুন</span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
